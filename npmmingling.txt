@@ -1,0 +1,6 @@
+npm  -v     查看npm版本
+node -v     查看node版本
+webpack -v   查看webpack版本
+npm   install  browserify  -g   全局安装browserify工具 
+Ctrl c    结束当前命令
+browserify main.js -o bundle.js   把主入口文件压缩打包成浏览器认识的代码

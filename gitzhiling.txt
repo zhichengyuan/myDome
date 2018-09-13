@@ -1,0 +1,41 @@
+1、git init 初始化项目
+2、ssh-keygen 获取GitHub秘钥
+3、git config --list 查看基本配置
+4、git config --global  user.name 'yuanzhicheng' 配合基本信息
+5、git remote add origin git@github.com:zhichengyuan/myDome.git   和远程仓库进行关联
+6、git remote -v 查看远端仓库和本地仓库是否一致
+7、git remote rename origin dev 改远端仓库的名字为dev
+*8、git add 文件名     把文件放在缓存区    
+       git add .   把所有改过的文件都放到缓存区
+*9、git commit -m '修改信息'   把文件放到本地仓库内
+10、git log 查看提交的版本
+*11、git status 查看文件的状态
+12、git checkout  -- 文件名     撤销到离自己最近的add或者commit的地方
+13、git reset HEAD^1 回退到上一个版本
+       git reset --hard HEAD~2   回退到上两个版本    回退全部，包括HEAD，index , working tree  
+       git reset --soft HEAD~1    回退部分，包括HEAD,index   回退到commit之前的
+       版本回退
+       git reset --(soft | mixed | hard)  <HEAD~ (num)> | <commit ID>
+       soft 回退到 commit       mixed 回退到 add      hard回退到上个版本 
+14、git reflog 查看历史操作记录
+15、git diff 比较工作区和暂存区的差别
+       git diff -- cached 比较暂存区与本地版本库中最近一次commit的内容
+       git diff HEAD 比较工作区与本地版本库最近一次commit的内容
+       git diff <commit-id> <commit-id> 比较两个commit的内容
+*16、git stash save -a 'msg' 当没做完想提交版本时，可以把没做完的存在暂存区里
+        git stash list  查看没做完的东西列表
+        git stash pop  把没做完的东西调出来
+
+分支
+*16、git push origin master  把本地仓库的master分支推送到远程仓库的master分支
+17、git branch 查看当前分支
+18、git branch <name>创建新分支
+19、git branch -d <name> 删除分支
+20、git checkout <name> 切换分支
+21、git checkout -b <name>创建并跳转新的分支
+*22、git merge <name>合并分支
+*23、git pull origin master:dev  把远程仓库的master分支代码拉到本地仓库的dev分支
+*24、git clone 拉取远程仓库的主分支代码
+25
+
+      

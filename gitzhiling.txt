@@ -36,6 +36,7 @@
 *22、git merge <name>合并分支
 *23、git pull origin master:dev  把远程仓库的master分支代码拉到本地仓库的dev分支
 *24、git clone 拉取远程仓库的主分支代码
-25
+25、git push -f origin master 强制修改
+
 
       

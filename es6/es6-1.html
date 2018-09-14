@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <script>
+        //形式{ }
+        //特点 在块级作用域定义的变量，只会在当前作用域和子集作用域有效
+        //例：
+        // {
+        //     var a = 10;
+        //     let msg = 'nihao';
+        //     {
+        //         let c = 10;
+        //         console.log(a);
+        //     }
+        // }
+        // console.log(a);
+        // console.log(msg);
+
+        //let 不可重复声明同一个变量、不会声明提升，必须提前声明
+        //例：
+        // console.log(name);
+        // let name = 10;
+
+
+        //暂时性死区（TDZ temporal dead zone)
+        //
+        //javaScript 引擎在扫描（预编译）代码的时候
+        //如是var声明的    变量声明提升
+        //let a = 1        把 a 放到TDZ 当中
+        //如果使用的变量在DTZ 当中 就会报错
+            //例：
+            //typeof name;
+            //let name = 10;
+            //
+            //
+        //es5 写法
+        // var arr = [];
+        // for(var i=0;i<10;i++) {
+        //     arr[i] = (function (j) {
+        //         return function () {
+        //             console.log(j)
+        //         }
+        //     })(i)
+        // }
+        // console.log(i);
+        // arr[6]();
+        //
+        //let 写法
+        var arr = [];
+        for(let i=0; i<10;i++) {
+            arr[i] = function () {
+                console.log(i);
+            }
+        }
+        // console.log(i);
+        arr[6]();
+
+
+        //const定义的常量量是原始值的话，不能被改变，实质存储的是地址
+    </script>
+</body>
+</html>

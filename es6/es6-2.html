@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <script>
+        //闭包
+        //返回长度为n的随机数据字符串的函数
+        // function Random(n) {
+        //     let max = 1
+        //     for(let i=0;i<n;i++) {
+        //         max *=10
+        //     }
+        //     return function () {
+        //         let str = "" + parseInt(Math.random() * max);
+        //         let count = n - str.length;
+        //         console.log(count);
+        //         for(let i=0;i<count;i++) {
+        //             str +='0'
+        //         }
+        //         return str
+        //     }
+
+        // }
+        // let random8 = Random(8);
+        // console.log(random8(8));
+
+
+
+        // 1、函数的默认值
+           // function Person(name) {
+           //    this.name = name === undefined ? 'none' : name
+           // }
+           // let p = new Person('wxb');
+           // let p1 = new Person();
+           // let p2 = new Person(null);
+           // let p3 = new Person(undefined);
+           // let p4 = new Person(0);
+           // let p5 = new Person('');
+           // let p6 = new Person(false);
+           // console.log(p);console.log(p1);console.log(p2);console.log(p3);console.log(p4);console.log(p5);console.log(p6);
+
+
+
+        //2.ES6 函数的默认值   当传入的值绝对等于undefined的时候才会走默认值
+       //  function Person(name = "none") {
+       //      this.name = name
+       //  }
+       // let p = new Person('wxb');
+       // let p1 = new Person();
+       // let p2 = new Person(null);
+       // let p3 = new Person(undefined);
+       // let p4 = new Person(0);
+       // let p5 = new Person('');
+       // let p6 = new Person(false);
+       // console.log(p);console.log(p1);console.log(p2);console.log(p3);console.log(p4);console.log(p5);console.log(p6);
+
+
+       //arguments 对参数的影响  如果有默认参数则自动变为严格模式
+       // function max(num1 = 0,num2) {
+       //  console.log(num1,arguments[0])
+       //  console.log(num2,arguments[1])
+       //  num1 = 4
+       //  console.log(num1,arguments[0])
+       //  arguments[0] = 6
+       //  console.log(num1,arguments[1])
+       // }
+       // max(1,2);
+
+
+       // function getValue() {
+       //    console.log('hello');
+       //    return 6
+       // }
+       // function count(n,m = getValue()){
+       //      console.log(n + m);
+       // }
+       // count(1,2);
+       // count(1);
+
+
+       //TDZ
+       // function add(m,n=m) {
+       //      console.log(m + n);
+       // }
+       // add(1);
+
+
+       //3、无命名参数和扩展运算数
+       //（1）默认值的问题
+       //（2）参数不定的时候，通过arguments去访问，不直接，不方便
+       //（3）箭头函数不支持argments
+       //
+       //把若干数字 + 1，添加到指定的数组当中
+         // function count(arr,...arg) {
+         //    console.log(arg);
+         //    console.log(arguments);
+         //    for(let i=0; i<arg.length;i++) {
+         //        arr[i] = arg[i] + 1
+         //    }
+         //    console.log(arr);
+         // }
+         // let arr = [];
+         // count(arr,1,2,3,4,5);
+         //每个函数当中最多有且只能有一个不定参数...arg,不可以有默认值，必须是最后一个参数
+
+
+
+         //4、扩展运算符(拔掉括号)
+         //（1）数组合并
+         // var arr1 = [1,2,3,4,2];
+         // var arr2 = [6,2,7,9,4];
+         // //ES5合并数组
+         // var arr3 = arr1.concat(arr2);
+         // console.log(arr3);
+         // //ES6合并数组
+         // var arr4 = [...arr1,...arr2];
+         // console.log(arr4);
+
+
+
+         //5、箭头函数
+         //（1）基本结构
+         //    () => {}
+            //let getName = name => name;
+            //对于小括号（）函数的参数有且只有一个，才可以不写
+            //对于{} 函数体仅仅有一条语句的时候 才可以不写
+         //
+         // let show = (name,age) => console.log(name,age);
+         // show('xioaming',18);
+         //
+         // let fn = () => {} 相当于 function fn() {}
+         //
+         // 在箭头函数中，返回对象
+         // let returnObj = (name) => ({name:name})
+         // let obj = returnObj('shije');
+         // console.log(obj);
+         //
+         // 立即执行箭头函数
+         // let fn = (name => name)('wxb');
+         // let name = function(name) {return name}('wxb');
+         // console.log(fn);
+         // console.log(name);
+         //
+         // 箭头函数中没有this 没有arguments，super(class),prototype
+         // 不能被new操作符执行
+         // let fn = () => {}
+         // new fn()
+         // 箭头函数不能被作为构造函数，更多功能用于计算，数据流向，方便javaScript引擎优化代码
+         // 箭头函数具有绑定this的能力
+         //
+         // this绑定分为四种
+         //     默认绑定（空执行函数，函数单纯执行，this指向window
+         //     隐式绑定（谁调用this指向谁）
+         //     显示绑定（apply call bind）
+         //     new绑定
+         //
+         //ES5里的this指向
+         // var name = 'window'
+         // var obj = {
+         //    name:'obj',
+         //    print:function () {
+         //        console.log(this.name);
+         //    }
+         // }
+         // obj.print();
+         // var newPrint = obj.print.bind(window);
+         // var newnewPrint = newPrint.bind(obj);//bind只能绑定一次
+         // newPrint();
+         // newnewPrint();
+         //
+         // ES6里的this指向
+         // var obj1 = {
+         //    name:'obj1',
+         //    print:() => console.log(this.name)
+         // }
+         // obj1.print();
+         // var newPrint1 = obj1.print.bind(obj1);
+         // newPrint1();
+         //箭头函数中没有this。箭头函数具有绑定this的能力，箭头函数中
+         //绑定的this是：离自己最近的非箭头函数作用域中的this
+         //箭头函数的非箭头函数产生的父级作用域，this
+         //
+         //例：
+         // let obj3 = {
+         //    name:'obj3',
+         //    getName:function () {
+         //        let show = () => console.log(this.name);
+         //        show();
+         //    }
+         // }
+         // obj3.getName();
+                        //this = obj3
+         //scop2(show) => scope1(getName) => window
+         //
+         //例：
+         var name = 'window';
+         function scope() {
+            console.log(this);
+            setTimeout(() => {
+                console.log(this.name);
+            },1000);
+         }
+            scope.call({name:'now you see me'});
+    </script>
+</body>
+</html>

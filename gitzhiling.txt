@@ -1,42 +1,48 @@
-1¡¢git init ³õÊ¼»¯ÏîÄ¿
-2¡¢ssh-keygen »ñÈ¡GitHubÃØÔ¿
-3¡¢git config --list ²é¿´»ù±¾ÅäÖÃ
-4¡¢git config --global  user.name 'yuanzhicheng' ÅäºÏ»ù±¾ĞÅÏ¢
-5¡¢git remote add origin git@github.com:zhichengyuan/myDome.git   ºÍÔ¶³Ì²Ö¿â½øĞĞ¹ØÁª
-6¡¢git remote -v ²é¿´Ô¶¶Ë²Ö¿âºÍ±¾µØ²Ö¿âÊÇ·ñÒ»ÖÂ
-7¡¢git remote rename origin dev ¸ÄÔ¶¶Ë²Ö¿âµÄÃû×ÖÎªdev
-*8¡¢git add ÎÄ¼şÃû     °ÑÎÄ¼ş·ÅÔÚ»º´æÇø    
-       git add .   °ÑËùÓĞ¸Ä¹ıµÄÎÄ¼ş¶¼·Åµ½»º´æÇø
-*9¡¢git commit -m 'ĞŞ¸ÄĞÅÏ¢'   °ÑÎÄ¼ş·Åµ½±¾µØ²Ö¿âÄÚ
-10¡¢git log ²é¿´Ìá½»µÄ°æ±¾
-*11¡¢git status ²é¿´ÎÄ¼şµÄ×´Ì¬
-12¡¢git checkout  -- ÎÄ¼şÃû     ³·Ïúµ½Àë×Ô¼º×î½üµÄadd»òÕßcommitµÄµØ·½
-13¡¢git reset HEAD^1 »ØÍËµ½ÉÏÒ»¸ö°æ±¾
-       git reset --hard HEAD~2   »ØÍËµ½ÉÏÁ½¸ö°æ±¾    »ØÍËÈ«²¿£¬°üÀ¨HEAD£¬index , working tree  
-       git reset --soft HEAD~1    »ØÍË²¿·Ö£¬°üÀ¨HEAD,index   »ØÍËµ½commitÖ®Ç°µÄ
-       °æ±¾»ØÍË
+1ã€git init åˆå§‹åŒ–é¡¹ç›®
+2ã€ssh-keygen è·å–GitHubç§˜é’¥
+3ã€git config --list æŸ¥çœ‹åŸºæœ¬é…ç½®
+4ã€git config --global  user.name 'yuanzhicheng' é…åˆåŸºæœ¬ä¿¡æ¯
+5ã€git remote add origin git@github.com:zhichengyuan/myDome.git   å’Œè¿œç¨‹ä»“åº“è¿›è¡Œå…³è”
+6ã€git remote -v æŸ¥çœ‹è¿œç«¯ä»“åº“å’Œæœ¬åœ°ä»“åº“æ˜¯å¦ä¸€è‡´
+7ã€git remote rename origin dev æ”¹è¿œç«¯ä»“åº“çš„åå­—ä¸ºdev
+*8ã€git add æ–‡ä»¶å     æŠŠæ–‡ä»¶æ”¾åœ¨ç¼“å­˜åŒº    
+       git add .   æŠŠæ‰€æœ‰æ”¹è¿‡çš„æ–‡ä»¶éƒ½æ”¾åˆ°ç¼“å­˜åŒº
+*9ã€git commit -m 'ä¿®æ”¹ä¿¡æ¯'   æŠŠæ–‡ä»¶æ”¾åˆ°æœ¬åœ°ä»“åº“å†…
+10ã€git log æŸ¥çœ‹æäº¤çš„ç‰ˆæœ¬
+*11ã€git status æŸ¥çœ‹æ–‡ä»¶çš„çŠ¶æ€
+12ã€git checkout  -- æ–‡ä»¶å     æ’¤é”€åˆ°ç¦»è‡ªå·±æœ€è¿‘çš„addæˆ–è€…commitçš„åœ°æ–¹
+13ã€git reset HEAD^1 å›é€€åˆ°ä¸Šä¸€ä¸ªç‰ˆæœ¬
+       git reset --hard HEAD~2   å›é€€åˆ°ä¸Šä¸¤ä¸ªç‰ˆæœ¬    å›é€€å…¨éƒ¨ï¼ŒåŒ…æ‹¬HEADï¼Œindex , working tree  
+       git reset --soft HEAD~1    å›é€€éƒ¨åˆ†ï¼ŒåŒ…æ‹¬HEAD,index   å›é€€åˆ°commitä¹‹å‰çš„
+       ç‰ˆæœ¬å›é€€
        git reset --(soft | mixed | hard)  <HEAD~ (num)> | <commit ID>
-       soft »ØÍËµ½ commit       mixed »ØÍËµ½ add      hard»ØÍËµ½ÉÏ¸ö°æ±¾ 
-14¡¢git reflog ²é¿´ÀúÊ·²Ù×÷¼ÇÂ¼
-15¡¢git diff ±È½Ï¹¤×÷ÇøºÍÔİ´æÇøµÄ²î±ğ
-       git diff -- cached ±È½ÏÔİ´æÇøÓë±¾µØ°æ±¾¿âÖĞ×î½üÒ»´ÎcommitµÄÄÚÈİ
-       git diff HEAD ±È½Ï¹¤×÷ÇøÓë±¾µØ°æ±¾¿â×î½üÒ»´ÎcommitµÄÄÚÈİ
-       git diff <commit-id> <commit-id> ±È½ÏÁ½¸öcommitµÄÄÚÈİ
-*16¡¢git stash save -a 'msg' µ±Ã»×öÍêÏëÌá½»°æ±¾Ê±£¬¿ÉÒÔ°ÑÃ»×öÍêµÄ´æÔÚÔİ´æÇøÀï
-        git stash list  ²é¿´Ã»×öÍêµÄ¶«Î÷ÁĞ±í
-        git stash pop  °ÑÃ»×öÍêµÄ¶«Î÷µ÷³öÀ´
+       soft å›é€€åˆ° commit       mixed å›é€€åˆ° add      hardå›é€€åˆ°ä¸Šä¸ªç‰ˆæœ¬ 
+14ã€git reflog æŸ¥çœ‹å†å²æ“ä½œè®°å½•
+15ã€git diff æ¯”è¾ƒå·¥ä½œåŒºå’Œæš‚å­˜åŒºçš„å·®åˆ«
+       git diff -- cached æ¯”è¾ƒæš‚å­˜åŒºä¸æœ¬åœ°ç‰ˆæœ¬åº“ä¸­æœ€è¿‘ä¸€æ¬¡commitçš„å†…å®¹
+       git diff HEAD æ¯”è¾ƒå·¥ä½œåŒºä¸æœ¬åœ°ç‰ˆæœ¬åº“æœ€è¿‘ä¸€æ¬¡commitçš„å†…å®¹
+       git diff <commit-id> <commit-id> æ¯”è¾ƒä¸¤ä¸ªcommitçš„å†…å®¹
+*16ã€git stash save -a 'msg' å½“æ²¡åšå®Œæƒ³æäº¤ç‰ˆæœ¬æ—¶ï¼Œå¯ä»¥æŠŠæ²¡åšå®Œçš„å­˜åœ¨æš‚å­˜åŒºé‡Œ
+        git stash list  æŸ¥çœ‹æ²¡åšå®Œçš„ä¸œè¥¿åˆ—è¡¨
+        git stash pop  æŠŠæ²¡åšå®Œçš„ä¸œè¥¿è°ƒå‡ºæ¥
 
-·ÖÖ§
-*16¡¢git push origin master  °Ñ±¾µØ²Ö¿âµÄmaster·ÖÖ§ÍÆËÍµ½Ô¶³Ì²Ö¿âµÄmaster·ÖÖ§
-17¡¢git branch ²é¿´µ±Ç°·ÖÖ§
-18¡¢git branch <name>´´½¨ĞÂ·ÖÖ§
-19¡¢git branch -d <name> É¾³ı·ÖÖ§
-20¡¢git checkout <name> ÇĞ»»·ÖÖ§
-21¡¢git checkout -b <name>´´½¨²¢Ìø×ªĞÂµÄ·ÖÖ§
-*22¡¢git merge <name>ºÏ²¢·ÖÖ§
-*23¡¢git pull origin master:dev  °ÑÔ¶³Ì²Ö¿âµÄmaster·ÖÖ§´úÂëÀ­µ½±¾µØ²Ö¿âµÄdev·ÖÖ§
-*24¡¢git clone À­È¡Ô¶³Ì²Ö¿âµÄÖ÷·ÖÖ§´úÂë
-25¡¢git push -f origin master Ç¿ÖÆĞŞ¸Ä
+åˆ†æ”¯
+*16ã€git push origin master  æŠŠæœ¬åœ°ä»“åº“çš„masteråˆ†æ”¯æ¨é€åˆ°è¿œç¨‹ä»“åº“çš„masteråˆ†æ”¯
+17ã€git branch æŸ¥çœ‹å½“å‰åˆ†æ”¯
+18ã€git branch <name>åˆ›å»ºæ–°åˆ†æ”¯
+19ã€git branch -d <name> åˆ é™¤åˆ†æ”¯
+20ã€git checkout <name> åˆ‡æ¢åˆ†æ”¯
+21ã€git checkout -b <name>åˆ›å»ºå¹¶è·³è½¬æ–°çš„åˆ†æ”¯
+*22ã€git merge <name>åˆå¹¶åˆ†æ”¯
+*23ã€git pull origin master:dev  æŠŠè¿œç¨‹ä»“åº“çš„masteråˆ†æ”¯ä»£ç æ‹‰åˆ°æœ¬åœ°ä»“åº“çš„devåˆ†æ”¯
+*24ã€git clone æ‹‰å–è¿œç¨‹ä»“åº“çš„ä¸»åˆ†æ”¯ä»£ç 
+25ã€git push -f origin master å¼ºåˆ¶ä¿®æ”¹
+26 git push --all æŠŠæœ¬åœ°æ‰€æœ‰çš„åˆ†æ”¯éƒ½æ¨é€åˆ°è¿œç¨‹ä»“åº“
+27 git pull --all æŠŠè¿œç¨‹çš„æ‰€æœ‰åˆ†æ”¯éƒ½æ‹‰å–ä¸‹æ¥
+28 git checkout -b master origin/master  æŠŠè¿œç¨‹ä»“åº“çš„masteråˆ†æ”¯åˆ›å»ºåˆ°æœ¬åœ°
+29 git push origin feature-branch:feature-branch //æ¨é€æœ¬åœ°çš„feature-branch(å†’å·å‰é¢çš„)åˆ†æ”¯åˆ°è¿œç¨‹originçš„feature-branch(å†’å·åé¢çš„)åˆ†æ”¯(æ²¡æœ‰ä¼šè‡ªåŠ¨åˆ›å»º)
+
+
 
 
       
